@@ -22,7 +22,10 @@ function Card({ photo, name, description, skills }) {
   return (
     <div className='card'>
       <Avatar photo={photo} />
-      <Info name={name} description={description} skills={skills} />
+      <div className='data'>
+        <Info name={name} description={description} />
+        <SkillList skills={skills} />
+      </div>
     </div>
   );
 }
@@ -31,20 +34,21 @@ function Avatar({ photo }) {
   return <img className='avatar' src={photo} alt='alena' />;
 }
 
-function Info({ name, description, skills }) {
+function Info({ name, description }) {
   return (
-    <div className='data'>
+    <>
       <h1>{name}</h1>
       <p>{description}</p>
-      <div className='skill-list'>
-        {skills.map((skill) => (
-          <Skill
-            key={skill.skill}
-            skill={`${skill.skill} ${skill.level}`}
-            color={skill.color}
-          />
-        ))}{' '}
-      </div>
+    </>
+  );
+}
+
+function SkillList({ skills }) {
+  return (
+    <div className='skill-list'>
+      {skills.map((skill) => (
+        <Skill key={skill.skill} skill={skill.skill} color={skill.color} />
+      ))}{' '}
     </div>
   );
 }
@@ -54,8 +58,8 @@ function Skill({ skill, color }) {
     backgroundColor: color,
   };
   return (
-    <p className='skill' style={style}>
+    <span className='skill' style={style}>
       {skill}
-    </p>
+    </span>
   );
 }
