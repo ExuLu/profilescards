@@ -6,19 +6,15 @@ export default function App() {
   return (
     <div className='cards'>
       {profiles.map((profile) => (
-        <Card
-          key={profile.name}
-          photo={profile.photo}
-          name={profile.name}
-          description={profile.description}
-          skills={profile.skills}
-        />
+        <Card key={profile.name} profileObj={profile} />
       ))}
     </div>
   );
 }
 
-function Card({ photo, name, description, skills }) {
+function Card({ profileObj }) {
+  const { photo, name, description, skills } = profileObj;
+
   return (
     <div className='card'>
       <Avatar photo={photo} />
@@ -47,19 +43,26 @@ function SkillList({ skills }) {
   return (
     <div className='skill-list'>
       {skills.map((skill) => (
-        <Skill key={skill.skill} skill={skill.skill} color={skill.color} />
+        <Skill key={skill.skill} skillObj={skill} />
       ))}{' '}
     </div>
   );
 }
 
-function Skill({ skill, color }) {
+function Skill({ skillObj }) {
+  const { skill, level, color } = skillObj;
   const style = {
     backgroundColor: color,
   };
+
   return (
-    <span className='skill' style={style}>
-      {skill}
-    </span>
+    <div className='skill' style={style}>
+      <span>{skill}</span>
+      <span>
+        {level === 'beginner' && '🐣'}
+        {level === 'intermediate' && '💪'}
+        {level === 'advanced' && '😎'}
+      </span>
+    </div>
   );
 }

@@ -7,23 +7,28 @@ export const profiles = [
     `,
     skills: [
       {
-        skill: 'JavaScript 👍',
+        skill: 'JavaScript',
+        level: 'intermediate',
         color: '#ED7D31',
       },
       {
-        skill: 'Singing 😎',
+        skill: 'Singing',
+        level: 'advanced',
         color: '#F8BDEB',
       },
       {
-        skill: 'React 🐣',
+        skill: 'React',
+        level: 'beginner',
         color: '#A7D397',
       },
       {
-        skill: 'HTML+CSS 🐣',
+        skill: 'HTML+CSS',
+        level: 'beginner',
         color: '#5272F2',
       },
       {
-        skill: 'Node.js 🐣',
+        skill: 'Node.js',
+        level: 'beginner',
         color: '#FBECB2',
       },
     ],
@@ -37,19 +42,23 @@ export const profiles = [
     `,
     skills: [
       {
-        skill: 'Kubernetis 👍',
+        skill: 'Kubernetis',
+        level: 'intermediate',
         color: '#ED7D31',
       },
       {
-        skill: 'Amazon Cloud 😎',
+        skill: 'Amazon Cloud',
+        level: 'advanced',
         color: '#FF8080',
       },
       {
-        skill: 'Git and GitHub 😎',
+        skill: 'Git and GitHub',
+        level: 'advanced',
         color: '#FFB000',
       },
       {
-        skill: 'Pyton 🐣',
+        skill: 'Pyton',
+        level: 'beginner',
         color: '#E25E3E',
       },
     ],
